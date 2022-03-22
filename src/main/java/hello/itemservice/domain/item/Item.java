@@ -12,15 +12,15 @@ public class Item {
 
     private Long id;
 
-    @NotBlank(message = "공백 노노")
+//    @NotBlank(groups = UpdateCheck.class) V3 GROUP
     private String itemName;
 
-    @NotNull
-    @Range(min = 1000, max = 1000000)
+//    @NotNull(groups = {UpdateCheck.class, SaveCheck.class})
+//    @Range(min = 1000, max = 1000000, groups = {UpdateCheck.class, SaveCheck.class})
     private Integer price;
 
-    @NotNull
-    @Max(9999)
+//    @NotNull(groups = {UpdateCheck.class, SaveCheck.class})
+//    @Max(value = 9999, groups = {SaveCheck.class})
     private Integer quantity;
 
     public Item() {
